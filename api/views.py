@@ -62,7 +62,7 @@ class ReferralStatusCheckView(generics.ListAPIView):
     serializer_class = ReferralSerializer
 
     def get_queryset(self):
-        user_id = self.request.query_params.get('user_id')
+        user_id = self.data.get('user_id')
         if not user_id:
             return Referral.objects.none()
         return Referral.objects.filter(referrer_id=user_id)

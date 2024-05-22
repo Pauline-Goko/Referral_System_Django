@@ -17,13 +17,13 @@ class ReferralAdminForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if not self.instance.pk:
-            # Generate unique code only when adding a new referral
+          
             self.fields['unique_code'].initial = get_random_string(10)
 
         def __init__(self, *args, **kwargs):
          super().__init__(*args, **kwargs)
         if not self.instance.pk:
-            # Calculate reward only when adding a new referral
+            
             self.instance.reward = self.instance.calculate_reward()
 
 class ReferralAdmin(admin.ModelAdmin):
