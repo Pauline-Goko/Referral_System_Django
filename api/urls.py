@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import ReferralLinkGenerateView, SignupTrackingView, ReferralStatusCheckView
+from .views import GenerateReferralLink, TrackSignup, GetReferralStatusAndReward
 
 urlpatterns = [
-    path('referral/generate/', ReferralLinkGenerateView.as_view(), name='referral-generate'),
-    path('referral/signup/', SignupTrackingView.as_view(), name='referral-signup'),
-    path('referral/status/', ReferralStatusCheckView.as_view(), name='referral-status'),
+    path('referral/generate/', GenerateReferralLink.as_view()),
+    path('referral/signup/', TrackSignup.as_view()),
+    path('referral/status/', GetReferralStatusAndReward.as_view()),
 ]
